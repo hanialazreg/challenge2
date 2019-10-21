@@ -45,13 +45,23 @@ Create two computers object from your factory function and save them in one arra
 Note: please write one or two lines here describing your solution.
 */
 
-function makeComputer(type, color, weight) {
-  // TODO: Your code here
+
+
+function makeComputer(type, color, weight, ram) {
+	var computer = {
+	type : type,
+	color : color,
+	weight : weight,
+	ram : ram
+};
+  
 }
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
+	// return a string discribing a compuet 
+	return computer.type + " " + computer.color + " " + computer.weight + " " + computer.ram + " " '\n' ;
   // TODO: Your code here
 }
 
@@ -71,8 +81,14 @@ Note: please write one or two lines here describing your solution.
 var strArr = ['hello', 'world', 'whirled', 'peas'];
 uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
-
+// i will use map to iterate over the array arrayOfStrings 
 function uppercaseAll(arrayOfStrings) {
+
+	
+		return map(arrayOfStrings, function(str) {
+			 return str.toUpperCase();
+		});
+
   // TODO: your code here
 }
 
@@ -112,6 +128,14 @@ var data = [
 ];
 
 function highestPopulation(arrayOfObjects) {
+	// using map 
+	// if condition to compare population
+	return map( arrayOfObjects, function(val){
+		if( val.population > 500000000){
+			return val ; 
+		}
+		 
+	} );
   // TODO: your code here
 }
 
@@ -133,6 +157,9 @@ Note: please write one or two lines here describing your solution.
 
 function halveAll(numbers) {
   // your code is here
+  return map (numbers, function(num){
+  	return num / 2 ;
+  });
 }
 
 //=============================================================================
@@ -148,7 +175,10 @@ values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129]
 Note: please write one or two lines here describing your solution.
 */
 function values(obj) {
-  // TODO: your code here
+  // use keys, value (properties) to output the value
+  return map( obj, function(keys){
+  	return values['keys'];
+  });
 }
 
 //Good Luck :))
